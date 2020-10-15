@@ -41,9 +41,6 @@ public class NavigationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
-		// TODO Auto-generated method stub
 		BookHelper bh = new BookHelper();
 		BookLocationHelper blh = new BookLocationHelper();
 		String act = request.getParameter("doThisToList");
@@ -52,10 +49,15 @@ public class NavigationServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/viewBookListServlet").forward(request, response);
 		} else if (act.equals("delete")) {
 			try {
+				// book location id is saved by selection ofo the radio button
 				int tempBookLocationId = Integer.parseInt(request.getParameter("id"));
+				// find the book location object/row based on the id
 				BookLocation deleteBookLocation = blh.searchForItemById(tempBookLocationId);
+				// find the book instance from the POJO
 				Book delBook = deleteBookLocation.getMyBook();
+				// delete book location first because it contains the foreign key
 				blh.deleteItem(deleteBookLocation);
+				// delete the book second
 				bh.deleteItem(delBook);
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an item");

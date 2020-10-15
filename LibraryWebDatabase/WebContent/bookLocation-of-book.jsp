@@ -15,10 +15,10 @@
 <th>Title</th>
 <th>Author</th>
 <th>Call</th>
-<th>Date Purchased</th>
+<th>Purchased</th>
 <th>Section</th>
 <th>Shelf</th>
-<th>Date Shelf</th>
+<th>Shelved</th>
 </tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
