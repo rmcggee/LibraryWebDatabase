@@ -8,6 +8,7 @@
 <title>Customers</title>
 </head>
 <body>
+<h1> List Of Current Book's checked out</h1>
 <form method="post" action="CustomerNavigationServlet">
 <table>
 <c:forEach var = "customerList" items="${requestScope.allLists}" >
