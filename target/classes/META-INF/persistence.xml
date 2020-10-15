@@ -5,12 +5,13 @@
 		<class>model.Book</class>
 		<class>model.BookLocation</class>
 		<class>controller.LocalDateAttributeConverter</class>
+		<class>model.Customer</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175rmcg1.c2h2gcjmrc3z.us-east-1.rds.amazonaws.com/library"/>
+			<property name="eclipselink.jdbc.bind-parameters" value="true" />
 			<property name="javax.persistence.jdbc.user" value="admin"/>
 			<property name="javax.persistence.jdbc.password" value="javaisfun321"/>
-			<property name="eclipselink.jdbc.bind-parameters" value="true" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175rmcg1.c2h2gcjmrc3z.us-east-1.rds.amazonaws.com/library"/>
 		</properties>
 	</persistence-unit>
 </persistence>

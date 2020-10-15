@@ -1,31 +1,31 @@
 package controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
-
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import model.BookLocation;
-
-
+import model.Customer;
 
 /**
- * Servlet implementation class ViewBookListServlet
+ * Servlet implementation class viewCustomersServlet
  */
-@WebServlet("/viewBookListServlet")
-public class ViewBookListServlet extends HttpServlet {
+@WebServlet("/viewCustomersServlet")
+public class ViewCustomersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewBookListServlet() {
+    public ViewCustomersServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,14 +34,15 @@ public class ViewBookListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		BookLocationHelper blh = new BookLocationHelper();
-		List<BookLocation> abc = blh.getLists();
-		
-		request.setAttribute("allLists", abc);
-		if (abc.isEmpty()) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibraryWebDatabase");
+		EntityManager em = emf.createEntityManager();
+		CustomerHelper help = new CustomerHelper(em);
+		List<Customer> customerList = help.viewAllCustomers();
+		request.setAttribute("allLists",help.viewAllCustomers());
+		if (customerList.isEmpty()) {
 			request.setAttribute("allLists", " ");
 		}
-		getServletContext().getRequestDispatcher("/bookLocation-of-book.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/listCustomers.jsp").forward(request, response);
 
 	}
 

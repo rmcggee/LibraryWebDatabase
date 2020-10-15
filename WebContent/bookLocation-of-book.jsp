@@ -8,7 +8,7 @@
 <title>Book - Location List</title>
 </head>
 <body>
-	<form method="post" action="navigationServlet">
+<form method="post" action="navigationServlet">
 <table>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
@@ -25,7 +25,11 @@
 </table>
 <input type = "submit" value = "delete" name="doThisToList">
 <input type="submit" value = "add" name = "doThisToList">
-</form>
 
+<h1>Checkout a Book </h1>
+Your Name: <input type ="text" name = "name">
+<input type="submit" value = "checkout" name = "doThisToList">
+<a href = "viewCustomersServlet">View the complete list of Customers</a> <br/>
+</form>
 </body>
 </html>
