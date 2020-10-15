@@ -58,7 +58,7 @@ public class CustomerNavigationServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an item");
 			} finally {
-				getServletContext().getRequestDispatcher("/viewCustomersServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/succes.html").forward(request, response);
 			}
 		
 		} else if (act.equals("add")) {

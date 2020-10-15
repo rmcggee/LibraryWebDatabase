@@ -67,7 +67,7 @@ public class NavigationServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an item");
 			} finally {
-				getServletContext().getRequestDispatcher("/viewBookListServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/success.html").forward(request, response);
 			}
 		} else if (act.equals("edit")) {
 			try {
@@ -94,7 +94,7 @@ public class NavigationServlet extends HttpServlet {
 				System.out.println("Forgot to select an item");
 			}
 			finally {
-			getServletContext().getRequestDispatcher("/viewBookListServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/sucess.html").forward(request, response);
 		}
 		}
 	}
