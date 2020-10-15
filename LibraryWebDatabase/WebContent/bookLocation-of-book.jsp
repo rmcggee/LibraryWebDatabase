@@ -10,6 +10,16 @@
 <body>
 	<form method="post" action="navigationServlet">
 <table>
+<tr>
+<th/>
+<th>Title</th>
+<th>Author</th>
+<th>Call</th>
+<th>Date Purchased</th>
+<th>Section</th>
+<th>Shelf</th>
+<th>Date Shelf</th>
+</tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
  <td><input type="radio" name="id" value="${bookList.locationId}"> </td>
