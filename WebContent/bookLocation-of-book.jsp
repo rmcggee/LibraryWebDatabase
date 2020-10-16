@@ -8,7 +8,7 @@
 <title>Book - Location List</title>
 </head>
 <body>
-	<form method="post" action="navigationServlet">
+<form method="post" action="navigationServlet">
 <table>
 <tr>
 <th/>
@@ -35,7 +35,13 @@
 </table>
 <input type = "submit" value = "delete" name="doThisToList">
 <input type="submit" value = "add" name = "doThisToList">
-</form>
 
+<h1>Checkout a Book </h1>
+Your Name: <input type ="text" name = "name">
+<input type="submit" value = "checkout" name = "doThisToList">
+<a href = "viewCustomersServlet">View the complete list of Customers</a> <br/>
+</form>
+<img src="https://thumbs.dreamstime.com/b/bookshelf-full-books-icon-cartoon-colorful-isolated-vector-illustration-graphic-design-149682816.jpg" alt="" width="200"
+         height="300">
 </body>
 </html>

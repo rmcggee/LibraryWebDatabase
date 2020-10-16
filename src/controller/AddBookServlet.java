@@ -51,7 +51,7 @@ public class AddBookServlet extends HttpServlet {
 		BookLocation myBookLocation = new BookLocation(mySection, myShelf, myBook);
 		blh.insertBookLocation(myBookLocation);
 		
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/success.html").forward(request, response);
 	}
 
 }
