@@ -6,9 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Book - Location List</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
 </head>
 <body>
 <form method="post" action="navigationServlet">
+
+
 <table>
 <tr>
 <th/>
