@@ -60,6 +60,7 @@ public class BookLocation {
 
 	public void setSectionName(String sectionName) {
 		this.sectionName = sectionName;
+		this.createDate = LocalDate.now();
 	}
 
 	public String getShelfName() {
@@ -68,6 +69,7 @@ public class BookLocation {
 
 	public void setShelfName(String shelfName) {
 		this.shelfName = shelfName;
+		this.createDate = LocalDate.now();
 	}
 
 	public LocalDate getCreateDate() {

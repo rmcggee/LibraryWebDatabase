@@ -46,6 +46,7 @@ table.center {
 </table>
 <input type = "submit" value = "delete" name="doThisToList">
 <input type="submit" value = "add" name = "doThisToList">
+<input type="submit" value = "edit" name = "doThisToList">
 
 <h1>Checkout a Book </h1>
 Your Name: <input type ="text" name = "name">
