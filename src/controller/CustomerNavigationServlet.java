@@ -73,8 +73,8 @@ public class CustomerNavigationServlet extends HttpServlet {
 				CustomerHelper help = new CustomerHelper(em);
 				Customer itemToEdit = help.searchForCustomerById(tempId);
 				request.setAttribute("itemToEdit", itemToEdit);
-				BookHelper blh = new BookHelper();
-				List<Book> abc = blh.getLists();
+				BookLocationHelper blh = new BookLocationHelper();
+				List<BookLocation> abc = blh.getLists();
 				
 				request.setAttribute("allLists", abc);
 				if (abc.isEmpty()) {

@@ -39,13 +39,9 @@ public class CustomerHelper {
 		em.getTransaction().begin();
 		System.out.println("Delete:"+toDelete.toString());
 		TypedQuery<Customer> typedQuery = em.createQuery("select d from Customer d where d.id = :selectedId", Customer.class);
-		// Substitute parameter with actual data from the toDelete item
 		typedQuery.setParameter("selectedId", toDelete.getId());
-		// we only want one result
 		typedQuery.setMaxResults(1);
-		// get the result and save it into a new list item
 		Customer result = typedQuery.getSingleResult();
-		// remove it
 		em.remove(result);
 		em.getTransaction().commit();
 		em.close();
