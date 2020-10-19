@@ -30,6 +30,7 @@ table.center {
 <th>Section</th>
 <th>Shelf</th>
 <th>Shelved</th>
+
 </tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
