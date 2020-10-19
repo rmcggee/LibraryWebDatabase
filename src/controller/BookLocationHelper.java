@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 
 import model.BookLocation;
 
+
 public class BookLocationHelper {
 
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("LibraryWebDatabase");
@@ -53,6 +54,12 @@ public class BookLocationHelper {
 		em.close();
 		}
 	
-	
+	public	void	updateItem(BookLocation	toEdit)	{
+		EntityManager	em	=	emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
 
 }

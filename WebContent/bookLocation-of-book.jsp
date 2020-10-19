@@ -6,9 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Book - Location List</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+</style>
 </head>
 <body>
 <form method="post" action="navigationServlet">
+
+
 <table>
 <tr>
 <th/>
@@ -18,7 +29,8 @@
 <th>Purchased</th>
 <th>Section</th>
 <th>Shelf</th>
-<th>Create Date</th>
+<th>Shelved</th>
+
 </tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
@@ -35,6 +47,7 @@
 </table>
 <input type = "submit" value = "delete" name="doThisToList">
 <input type="submit" value = "add" name = "doThisToList">
+<input type="submit" value = "edit" name = "doThisToList">
 
 <h1>Checkout a Book </h1>
 Your Name: <input type ="text" name = "name">

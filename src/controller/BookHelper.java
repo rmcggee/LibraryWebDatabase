@@ -40,7 +40,7 @@ public class BookHelper {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		System.out.println("Delete:"+toDelete.toString());
+	
 		TypedQuery<Book> typedQuery = em
 				.createQuery("select d from Book d where d.bookId = :selectedId", Book.class);
 		// Substitute parameter with actual data from the toDelete item
