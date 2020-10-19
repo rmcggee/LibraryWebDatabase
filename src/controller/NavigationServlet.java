@@ -73,9 +73,17 @@ public class NavigationServlet extends HttpServlet {
 			}
 		} else if (act.equals("edit")) {
 			try {
-				// not done
+				// book location id is saved by selection of the radio button
+				int tempBookLocationId = Integer.parseInt(request.getParameter("id"));
+			
+				// find the book location object/row based on the id
+				BookLocation editBookLocation = blh.searchForItemById(tempBookLocationId);
+				// send the object to the edit book location jsp
+				request.setAttribute("itemToEdit", editBookLocation);
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an item");
+			}finally {
+				getServletContext().getRequestDispatcher("/edit-bookLocation.jsp").forward(request, response);
 			}
 		} else if (act.equals("add")) {
 			getServletContext().getRequestDispatcher("/index.html").forward(request, response);
@@ -96,7 +104,7 @@ public class NavigationServlet extends HttpServlet {
 				System.out.println("Forgot to select an item");
 			}
 			finally {
-			getServletContext().getRequestDispatcher("/sucess.html").forward(request, response);
+			getServletContext().getRequestDispatcher("/success.html").forward(request, response);
 		}
 		}
 	}
