@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import model.Book;
 import model.BookLocation;
 import model.Customer;
 
@@ -73,8 +73,8 @@ public class CustomerNavigationServlet extends HttpServlet {
 				CustomerHelper help = new CustomerHelper(em);
 				Customer itemToEdit = help.searchForCustomerById(tempId);
 				request.setAttribute("itemToEdit", itemToEdit);
-				BookLocationHelper blh = new BookLocationHelper();
-				List<BookLocation> abc = blh.getLists();
+				BookHelper blh = new BookHelper();
+				List<Book> abc = blh.getLists();
 				
 				request.setAttribute("allLists", abc);
 				if (abc.isEmpty()) {
