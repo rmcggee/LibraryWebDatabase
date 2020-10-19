@@ -23,6 +23,7 @@ public class BookHelper {
 
 	public List<Book> showAllBooks() {
 		EntityManager em = emfactory.createEntityManager();
+		@SuppressWarnings("unchecked")
 		List<Book> allBookList = em.createQuery("SELECT s FROM Book s").getResultList();
 		return allBookList;
 		}
@@ -30,6 +31,7 @@ public class BookHelper {
 
 	public List<Book> getLists() {
 		EntityManager em = emfactory.createEntityManager();
+		@SuppressWarnings("unchecked")
 		List<Book> allDetails = em.createQuery("SELECT d FROM Book d").getResultList();
 		return allDetails;
 	}

@@ -24,6 +24,7 @@ public class BookLocationHelper {
 
 	public List<BookLocation> getLists() {
 		EntityManager em = emfactory.createEntityManager();
+		@SuppressWarnings("unchecked")
 		List<BookLocation> allBookLocationess = em.createQuery("SELECT d FROM BookLocation d").getResultList();
 		return allBookLocationess;
 	}
