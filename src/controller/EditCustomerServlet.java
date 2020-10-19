@@ -50,7 +50,7 @@ public class EditCustomerServlet extends HttpServlet {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibraryWebDatabase");
 		EntityManager em = emf.createEntityManager();
 		CustomerHelper help = new CustomerHelper(em);
-		BookHelper bhelp = new BookHelper();
+		BookLocationHelper bhelp = new BookLocationHelper();
 		
 		
 		String name = request.getParameter("name");
@@ -59,7 +59,8 @@ public class EditCustomerServlet extends HttpServlet {
 		int bookId = Integer.parseInt(request.getParameter("bookId"));
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		Customer itemToUpdate = help.searchForCustomerById(tempId);
-		Book book = bhelp.searchForItemById(bookId);
+		BookLocation bookLocation = bhelp.searchForItemById(bookId);
+		Book book = bookLocation.getMyBook();
 		if(book == null) {
 			System.out.println("error" + bookId);
 			
