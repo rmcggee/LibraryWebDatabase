@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Book;
+import model.BookLocation;
 import model.Customer;
 
 
@@ -58,14 +59,17 @@ public class EditCustomerServlet extends HttpServlet {
 		int bookId = Integer.parseInt(request.getParameter("bookId"));
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		Customer itemToUpdate = help.searchForCustomerById(tempId);
-		Book bookItemToUpdate = bhelp.searchForItemById(bookId);
+		Book book = bhelp.searchForItemById(bookId);
+		if(book == null) {
+			System.out.println("error" + bookId);
+			
+		}
+		else {
 		itemToUpdate.setName(name);
 		itemToUpdate.setCheckoutDate(localDate);
-		itemToUpdate.setBook(bookItemToUpdate);
-		
-				
+		itemToUpdate.setBook(book);
 		help.updateItem(itemToUpdate);
-
+		}
 		getServletContext().getRequestDispatcher("/success.html").forward(request,response);
 	}
 

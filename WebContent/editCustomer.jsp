@@ -16,24 +16,21 @@ Date: <input type ="text" name = "date" value= "${itemToEdit.checkoutDate }">
 <table>
 <tr>
 <th/>
+<th>Id</th>
 <th>Title</th>
 <th>Author</th>
 <th>Call</th>
 <th>Purchased Date</th>
-<th>Section Name</th>
-<th>shelf Name</th>
-<th>create Date</th>
 </tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
- <td><input type="radio" name="bookId" value="${bookList.locationId}"> </td>
- 					<td>${bookList.myBook.title}</td>
- 					<td>${bookList.myBook.author}</td>
- 					<td>${bookList.myBook.callNbrText}</td>
- 					<td>${bookList.myBook.purchasedDate}</td>
-					<td>${bookList.sectionName}</td>
-					<td>${bookList.shelfName}</td>
-					<td>${bookList.createDate}</td>			
+ <td><input type="radio" name="bookId" value="${bookList.bookId}"> </td>
+ 					<td>${bookList.bookId}</td>
+ 					<td>${bookList.title}</td>
+ 					<td>${bookList.author}</td>
+ 					<td>${bookList.callNbrText}</td>
+ 					<td>${bookList.purchasedDate}</td>
+					
  </tr>
 </c:forEach>
 </table>
