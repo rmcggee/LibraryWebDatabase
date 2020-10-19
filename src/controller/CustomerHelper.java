@@ -16,6 +16,7 @@ import model.Customer;
 
 
 
+
 public class CustomerHelper {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibraryWebDatabase");
 	EntityManager em = emf.createEntityManager();
@@ -60,9 +61,18 @@ public List<Customer> viewAllCustomers() {
 		List<Customer> allCustomer = em.createQuery("SELECT i FROM Customer i").getResultList();
 	return	allCustomer;
 	}
-	public Customer searchForCustomerById(int idToEdit) {
+public Customer searchForCustomerById(int idToEdit) {
 		// TODO Auto-generated method stub
 		Customer found = em.find(Customer.class,idToEdit);
 		return	found;
 	}
+public void updateItem(Customer toEdit) {
+	// TODO Auto-generated method stub
+	em.getTransaction().begin();
+	em.merge(toEdit);
+	em.getTransaction().commit();
+	em.close();
+	
+}
+
 }
