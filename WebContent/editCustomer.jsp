@@ -14,6 +14,16 @@ Name: <input type ="text" name = "name" value= "${itemToEdit.name}">
 Date: <input type ="text" name = "date" value= "${itemToEdit.checkoutDate }">
 <input type = "hidden" name = "id" value ="${itemToEdit.id}">
 <table>
+<tr>
+<th/>
+<th>Title</th>
+<th>Author</th>
+<th>Call</th>
+<th>Purchased Date</th>
+<th>Section Name</th>
+<th>shelf Name</th>
+<th>create Date</th>
+</tr>
 <c:forEach var = "bookList" items="${requestScope.allLists}" >
 <tr>
  <td><input type="radio" name="bookId" value="${bookList.locationId}"> </td>
