@@ -78,7 +78,6 @@ public class NavigationServlet extends HttpServlet {
 			
 				// find the book location object/row based on the id
 				BookLocation editBookLocation = blh.searchForItemById(tempBookLocationId);
-			
 				// send the object to the edit book location jsp
 				request.setAttribute("itemToEdit", editBookLocation);
 			} catch (NumberFormatException e) {
